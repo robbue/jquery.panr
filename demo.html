@@ -4,7 +4,7 @@
 		<title>jQuery panr - Powered by Greensock</title>
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
 		<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
-		<script src="../dist/jquery.panr.js"></script>
+		<script src="jquery.panr.js"></script>
 	</head>
 	<body>
 		
@@ -18,15 +18,10 @@
 			width: 600px;
 			height: 400px;
 		}
-
-		.box img {
-			/*width: 110%;
-			height: 110%;*/
-		}
 		</style>
 
 		<div class="box" id="box1">
-			<img src="test2.jpg" alt="">
+			<img src="http://lorempixel.com/600/400/sports/2" alt="">
 		</div>
 
 		<div class="box" id="box2">
@@ -38,57 +33,53 @@
 		</div>
 
 		<script>
-$( window ).load(function() {
-	
-	$("#box1 img").panr({
-		sensitivity: 20,
-		scale: true,
-		scaleOnHover: false,
-		scaleTo: 1.1,
-		scaleDuration: .25,
-		panY: true,
-		panX: true,
-		panDuration: 1.25,
-		resetPanOnMouseLeave: false
-	});
-
-	$("#box2 img").panr({
-		scale: false,
-		scaleTo: 1.1,
-		scaleDuration: .25,
-		panY: true,
-		panX: false,
-		panDuration: 1.25,
-		resetPanOnMouseLeave: false
-	});
-
-	$("#box3 img").panr({
-		moveTarget: $(document),
-		scale: false,
-		scaleOnHover: true,
-		scaleTo: 1.1,
-		scaleDuration: .25,
-		panY: true,
-		panX: true,
-		panDuration: 1.25,
-		resetPanOnMouseLeave: false,
-		onEnter: onEnterFunction,
-		onLeave: onLeaveFunction
-	});
-
-	function onEnterFunction() {
-		console.log('on enter')
-	}
-
-	function onLeaveFunction() {
-		console.log('on leave')
-	}
-});
-
-
-			$(function() {
-				
+		$( window ).load(function() {
+			
+			$("#box1 img").panr({
+				sensitivity: 20,
+				scale: false,
+				scaleOnHover: true,
+				scaleTo: 1.1,
+				scaleDuration: .25,
+				panY: true,
+				panX: true,
+				panDuration: 1.25,
+				resetPanOnMouseLeave: false
 			});
+
+			$("#box2 img").panr({
+				scale: true,
+				scaleTo: 1.1,
+				scaleDuration: .25,
+				panY: true,
+				panX: false,
+				panDuration: 1.25,
+				resetPanOnMouseLeave: false
+			});
+
+			$("#box3 img").panr({
+				moveTarget: $(document),
+				scale: false,
+				scaleOnHover: true,
+				scaleTo: 1.1,
+				scaleDuration: .25,
+				panY: true,
+				panX: true,
+				panDuration: 1.25,
+				resetPanOnMouseLeave: false,
+				onEnter: onEnterFunction,
+				onLeave: onLeaveFunction
+			});
+
+			function onEnterFunction(el) {
+				console.log('on enter' + el);
+			}
+
+			function onLeaveFunction(el) {
+				console.log('on leave' + el);
+			}
+		});
+
 		</script>
 	</body>
 </html>
