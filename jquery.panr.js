@@ -1,6 +1,6 @@
 /*
  	panr - v0.0.1
- 	The jQuery plugin for zoom & pan elements on mousemove
+ 	jQuery plugin for zoom & pan elements on mousemove
 	by Robert Bue (@robert_bue)
 
 	Powered by the Greensock Tweening Platform
@@ -31,7 +31,6 @@
 	// The actual plugin constructor
 	function Plugin ( element, options ) {
 		this.element = element;
-		console.log(element);
 		this.settings = $.extend( {}, defaults, options );
 		this._defaults = defaults;
 		this._name = pluginName;
