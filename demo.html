@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>jQuery panr - Powered by Greensock</title>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+		<script src="../dist/jquery.panr.js"></script>
+	</head>
+	<body>
+		
+		<style>
+		body {
+			background: whitesmoke;
+		}
+
+		.box {
+			overflow: hidden;
+			width: 600px;
+			height: 400px;
+		}
+
+		.box img {
+			/*width: 110%;
+			height: 110%;*/
+		}
+		</style>
+
+		<div class="box" id="box1">
+			<img src="test2.jpg" alt="">
+		</div>
+
+		<div class="box" id="box2">
+			<img src="http://lorempixel.com/600/400/sports/1" alt="">
+		</div>
+
+		<div class="box" id="box3" style="width: 1200px; height: 800px">
+			<img src="http://lorempixel.com/1200/800/sports/2" alt="">
+		</div>
+
+		<script>
+$( window ).load(function() {
+	
+	$("#box1 img").panr({
+		sensitivity: 20,
+		scale: true,
+		scaleOnHover: false,
+		scaleTo: 1.1,
+		scaleDuration: .25,
+		panY: true,
+		panX: true,
+		panDuration: 1.25,
+		resetPanOnMouseLeave: false
+	});
+
+	$("#box2 img").panr({
+		scale: false,
+		scaleTo: 1.1,
+		scaleDuration: .25,
+		panY: true,
+		panX: false,
+		panDuration: 1.25,
+		resetPanOnMouseLeave: false
+	});
+
+	$("#box3 img").panr({
+		moveTarget: $(document),
+		scale: false,
+		scaleOnHover: true,
+		scaleTo: 1.1,
+		scaleDuration: .25,
+		panY: true,
+		panX: true,
+		panDuration: 1.25,
+		resetPanOnMouseLeave: false,
+		onEnter: onEnterFunction,
+		onLeave: onLeaveFunction
+	});
+
+	function onEnterFunction() {
+		console.log('on enter')
+	}
+
+	function onLeaveFunction() {
+		console.log('on leave')
+	}
+});
+
+
+			$(function() {
+				
+			});
+		</script>
+	</body>
+</html>
