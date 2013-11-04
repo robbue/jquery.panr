@@ -2,13 +2,15 @@
 
 Zoom and panning effect
 
+[demo/](http://robertbue.no/plugins/jquery.panr/demo.html)
+
 ## Usage
 
 1. Include jQuery and GSAP:
 
 	```html
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.11.1/TweenMax.min.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.11.1/TweenMax.min.js"></script>
 	```
 
 2. Include plugin's code:
@@ -22,8 +24,8 @@ Zoom and panning effect
 	```javascript
 	$("#element").panr({
 		sensitivity: 30,
-		scale: true,
-		scaleOnHover: false,
+		scale: false,
+		scaleOnHover: true,
 		scaleTo: 1.1,
 		scaleDuration: .25,
 		panY: true,
@@ -34,8 +36,3 @@ Zoom and panning effect
 		onLeave: function(){}
 	});
 	```
-
-
-#### [demo/](demo.html)
-
-Contains a simple HTML file to demonstrate your plugin.
