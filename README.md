@@ -36,3 +36,11 @@ Zoom and panning effect
 		onLeave: function(){}
 	});
 	```
+
+## License
+
+This plugin is available under the [MIT license](http://opensource.org/licenses/mit-license.php).
+
+## Author
+
+Made by [Robert Bue](http://robertbue.no)
